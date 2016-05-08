@@ -49,12 +49,21 @@
       var canvas = document.querySelector('canvas');
       var ctx = canvas.getContext("2d");
       	ctx.textAlign = "center";
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
 		ctx.lineWidth = 3;
 		ctx.font = "36pt Impact";
 		ctx.fillStyle = "white";
-		ctx.fillText(topLine, c.width/2, 40);
-		ctx.strokeStyle = "black";
-		ctx.strokeText(topLine, c.width/2, 40);
+    ctx.strokeStyle = "black";
+
+    if (topLine != null){
+		ctx.fillText(topLine, c.width/2, 60);
+    ctx.strokeText(topLine, c.width/2, 60);
+  }
+		if (bottomLine != null){
+    ctx.fillText(bottomLine, c.width/2, c.height - 40);
+    ctx.strokeText(bottomLine, c.width/2, c.height - 40);
+
+    }
     }
     
     function saveFile() {
